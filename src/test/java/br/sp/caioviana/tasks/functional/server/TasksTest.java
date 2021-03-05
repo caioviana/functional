@@ -1,4 +1,4 @@
-package br.ce.wcaquino.tasks.functional.server;
+package br.sp.caioviana.tasks.functional.server;
 
 import org.junit.Assert;
 import org.junit.Test;

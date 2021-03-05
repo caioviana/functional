@@ -1,4 +1,4 @@
-package br.ce.wcaquino.tasks.functional.local;
+package br.sp.caioviana.tasks.functional.local;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -6,12 +6,15 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
-public class validacao_login_correto {
+import static org.junit.Assert.assertEquals;
+
+public class validacao_login_errado {
 
     private String strng;
 
@@ -40,17 +43,25 @@ public class validacao_login_correto {
         //Thread.sleep(500);
         System.out.println("Acesso endpoint - OK");
 
-        navegador.findElement(By.xpath("//input[contains(@type,'email')]")).sendKeys("pedro@email.com");
+        navegador.findElement(By.xpath("//span[@class='v-btn__content'][contains(.,'Login')]")).click();
+        //Thread.sleep(1000);
+
+        String textElement = navegador.findElement(By.className("v-messages__wrapper")).getText();
+        assertEquals("This field is required", textElement);
+        //Thread.sleep(1000);
+        System.out.println("Validação acesso sem nenhuma credencial inserida - OK");
+
+        navegador.findElement(By.xpath("//input[contains(@type,'email')]")).sendKeys("email_errado@email.com");
         navegador.findElement(By.xpath("//input[contains(@type,'password')]")).sendKeys("pedro");
         //Thread.sleep(500);
         navegador.findElement(By.xpath("//span[@class='v-btn__content'][contains(.,'Login')]")).click();
-        System.out.println("Validação acesso com email - OK");
-        //wait = new WebDriverWait(navegador, 15);
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='v-btn__content'][contains(.,'Logout')]")));
+        wait = new WebDriverWait(navegador, 15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("v-alert__content")));
 
-        String textElement = navegador.findElement(By.className("v-main")).getText();
-        //assertEquals("Home", textElement);
-        System.out.println("Validação acesso endpoint WEB_APP - OK");
+        System.out.println("Validação digitado email errado - OK");
+        textElement = navegador.findElement(By.className("v-alert__content")).getText();
+        assertEquals("Invalid username or password", textElement);
+        //Thread.sleep(2000);
 
         Thread.sleep(500);
         navegador.quit();

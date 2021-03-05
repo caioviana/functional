@@ -1,10 +1,9 @@
-package br.ce.wcaquino.tasks.prod;
+package br.sp.caioviana.tasks.prod;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

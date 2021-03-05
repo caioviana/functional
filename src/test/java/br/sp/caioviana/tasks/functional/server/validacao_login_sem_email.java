@@ -1,11 +1,10 @@
-package br.ce.wcaquino.tasks.functional.server;
+package br.sp.caioviana.tasks.functional.server;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
@@ -14,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 
-public class validacao_login_errado {
+public class validacao_login_sem_email {
 
     private String strng;
 
@@ -47,19 +46,20 @@ public class validacao_login_errado {
         //Thread.sleep(1000);
         System.out.println("Validação acesso sem nenhuma credencial inserida - OK");
 
-        navegador.findElement(By.xpath("//input[contains(@type,'email')]")).sendKeys("email_errado@email.com");
+        navegador.findElement(By.xpath("//input[contains(@type,'email')]")).sendKeys("pedro");
         navegador.findElement(By.xpath("//input[contains(@type,'password')]")).sendKeys("pedro");
-        //Thread.sleep(500);
+        textElement = navegador.findElement(By.className("v-messages__wrapper")).getText();
+        assertEquals("Invalid email", textElement);
         navegador.findElement(By.xpath("//span[@class='v-btn__content'][contains(.,'Login')]")).click();
-        wait = new WebDriverWait(navegador, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("v-alert__content")));
+        System.out.println("Validação acesso sem email - OK");
 
         System.out.println("Validação digitado email errado - OK");
-        textElement = navegador.findElement(By.className("v-alert__content")).getText();
-        assertEquals("Invalid username or password", textElement);
+        textElement = navegador.findElement(By.className("v-messages__wrapper")).getText();
+        assertEquals("Invalid email", textElement);
         //Thread.sleep(2000);
 
-        Thread.sleep(500);
+
+        Thread.sleep(1000);
         navegador.quit();
     }
 }

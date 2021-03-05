@@ -1,4 +1,4 @@
-package br.ce.wcaquino.tasks.functional.local;
+package br.sp.caioviana.tasks.functional.local;
 
 import org.junit.Test;
 import org.openqa.selenium.By;

@@ -1,7 +1,6 @@
-package br.ce.wcaquino.tasks.functional.server;
+package br.sp.caioviana.tasks.functional.server;
 
 import org.junit.Test;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
