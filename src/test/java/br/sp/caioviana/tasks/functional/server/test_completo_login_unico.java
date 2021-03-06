@@ -1,7 +1,8 @@
-package br.sp.caioviana.tasks.functional.server;
+package jw2.server;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -18,11 +19,21 @@ public class test_completo_login_unico {
     @Test
     public void teste() throws InterruptedException, MalformedURLException {
 
-//		WebDriver driver = new ChromeDriver();
+        //System.setProperty("com.google.inject.internal.cglib.$experimental_asm7", "true");
+        //System.setProperty ("webdriver.gecko.driver", "/Users/caioviana/drivers/geckodriver");
+        //System.setProperty("webdriver.chrome.driver", "/Users/caioviana/drivers/chromedriver");
+        //WebDriver navegador = new FirefoxDriver();
+        //WebDriver navegador = new ChromeDriver();
         DesiredCapabilities cap = DesiredCapabilities.chrome();
+
+        cap = DesiredCapabilities.chrome();
         WebDriver navegador = new RemoteWebDriver(new URL("http://172.17.2.201:4444/wd/hub"), cap);
         navegador.navigate().to("http://staging-webapp.vati.rocks/");
-        navegador.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        Dimension n = new Dimension(1280, 800);
+        //Dimension n = new Dimension (640, 640);
+        navegador.manage().window().setSize(n);
+
 
         navegador.manage().timeouts().implicitlyWait(16, TimeUnit.SECONDS);
         navegador.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
