@@ -19,7 +19,7 @@ public class endpoint_core {
 //		WebDriver driver = new ChromeDriver();
         DesiredCapabilities cap = DesiredCapabilities.chrome();
         WebDriver navegador = new RemoteWebDriver(new URL("http://172.17.2.201:4444/wd/hub"), cap);
-        navegador.get("staging-core-api.vati.rocks:86");
+        navegador.get("http://staging-core-api.vati.rocks:86");
         navegador.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //navegador.get("http://local.cdp.api.jw2.vati.rocks:8888/");
