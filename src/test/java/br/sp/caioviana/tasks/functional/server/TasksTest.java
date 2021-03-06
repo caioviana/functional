@@ -105,7 +105,7 @@ public class TasksTest {
 
 		System.out.println("Validação digitado email errado - OK");
 		/////////textElement = navegador.findElement(By.className("v-messages__wrapper")).getText();
-		////////assertEquals("Invalid email", textElement);
+		/////////assertEquals("Invalid email", textElement);
 		//Thread.sleep(2000);
 	}
 
