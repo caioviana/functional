@@ -93,7 +93,7 @@ public class TasksTest {
 		navegador.findElement(By.xpath("//span[@class='v-btn__content'][contains(.,'Login')]")).click();
 		//Thread.sleep(1000);
 
-		/////////String textElement = navegador.findElement(By.className("v-messages__wrapper")).getText();
+		///////////String textElement = navegador.findElement(By.className("v-messages__wrapper")).getText();
 		/////////assertEquals("This field is required", textElement);
 		/////////Thread.sleep(1000);
 		System.out.println("Validação acesso sem nenhuma credencial inserida - OK");
