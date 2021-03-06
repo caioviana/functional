@@ -5,14 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import static java.lang.Thread.*;
 import static org.junit.Assert.assertEquals;
 
 public class TasksTest {
@@ -35,7 +33,7 @@ public class TasksTest {
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
 		WebDriver navegador = new RemoteWebDriver(new URL("http://172.17.2.201:4444/wd/hub"), cap);
 		navegador.navigate().to("http://staging-core-api.vati.rocks:86/");
-		navegador.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		navegador.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	@Test
@@ -44,7 +42,7 @@ public class TasksTest {
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
 		WebDriver navegador = new RemoteWebDriver(new URL("http://172.17.2.201:4444/wd/hub"), cap);
 		navegador.navigate().to("http://staging-cdp-api.vati.rocks:8888");
-		navegador.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		navegador.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	@Test
@@ -53,7 +51,7 @@ public class TasksTest {
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
 		WebDriver navegador = new RemoteWebDriver(new URL("http://172.17.2.201:4444/wd/hub"), cap);
 		navegador.navigate().to("http://staging-webapp.vati.rocks/");
-		navegador.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		navegador.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	@Test
@@ -62,7 +60,7 @@ public class TasksTest {
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
 		WebDriver navegador = new RemoteWebDriver(new URL("http://172.17.2.201:4444/wd/hub"), cap);
 		navegador.navigate().to("http://staging-webapp.vati.rocks/");
-		navegador.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		navegador.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		navegador.findElement(By.xpath("//span[@class='v-btn__content'][contains(.,'Login')]")).click();
 
@@ -73,7 +71,7 @@ public class TasksTest {
 		navegador.findElement(By.xpath("//input[contains(@type,'email')]")).sendKeys("email_errado@email.com");
 		navegador.findElement(By.xpath("//input[contains(@type,'password')]")).sendKeys("pedro");
 		navegador.findElement(By.xpath("//span[@class='v-btn__content'][contains(.,'Login')]")).click();
-		wait = new WebDriverWait(navegador, 20);
+		wait = new WebDriverWait(navegador, 10);
 		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("v-alert__content")));
 
 		System.out.println("Validação digitado email errado - OK");
@@ -88,7 +86,7 @@ public class TasksTest {
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
 		WebDriver navegador = new RemoteWebDriver(new URL("http://172.17.2.201:4444/wd/hub"), cap);
 		navegador.navigate().to("http://staging-webapp.vati.rocks/");
-		navegador.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		navegador.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		navegador.findElement(By.xpath("//span[@class='v-btn__content'][contains(.,'Login')]")).click();
 		//Thread.sleep(1000);
@@ -117,7 +115,7 @@ public class TasksTest {
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
 		WebDriver navegador = new RemoteWebDriver(new URL("http://172.17.2.201:4444/wd/hub"), cap);
 		navegador.navigate().to("http://staging-webapp.vati.rocks/");
-		navegador.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		navegador.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		navegador.findElement(By.xpath("//input[contains(@type,'email')]")).sendKeys("pedro@email.com");
 		navegador.findElement(By.xpath("//input[contains(@type,'password')]")).sendKeys("pedro");
@@ -138,7 +136,7 @@ public class TasksTest {
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
 		WebDriver navegador = new RemoteWebDriver(new URL("http://172.17.2.201:4444/wd/hub"), cap);
 		navegador.navigate().to("http://staging-webapp.vati.rocks/");
-		navegador.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		navegador.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		navegador.findElement(By.xpath("//input[contains(@type,'email')]")).sendKeys("pedro@email.com");
 		navegador.findElement(By.xpath("//input[contains(@type,'password')]")).sendKeys("pedro");
