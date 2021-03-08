@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.Assert.assertEquals;
+
 public class endpoint_cdp {
 
     @Test
@@ -40,8 +42,4 @@ public class endpoint_cdp {
         navegador.quit();
 
     }
-
-    private void assertEquals(String expectedTitle, String actualTitle) {
-    }
-
 }

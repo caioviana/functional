@@ -140,7 +140,7 @@ public class TasksTest {
 		navegador.navigate().to("http://staging-webapp.vati.rocks/");
 
 		Dimension n = new Dimension(1280, 800);
-		//Dimension n = new Dimension (640, 640);
+		/////Dimension n = new Dimension (640, 640);
 		navegador.manage().window().setSize(n);
 
 

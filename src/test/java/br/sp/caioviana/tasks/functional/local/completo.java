@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
-public class completo {
+    public class completo {
 
     private String strng;
 
